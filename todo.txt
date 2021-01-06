@@ -1,7 +1,6 @@
 [X] read affixes from json
 [X] get random affix
 [X] get random non overlapping affix
-[X] get N random affixes (no duplicates)
 [X] get affix by group
 [X] get affix by ID
 [X] support 1 var
@@ -40,6 +39,3 @@
 
 ** if A rolls X, B will roll Y that is related to X
 *** maybe have list of gear specific affixes for each type
-
-obs:
-maybe make sockets an option if regular affixes doesn't roll

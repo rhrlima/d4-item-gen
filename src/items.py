@@ -26,9 +26,6 @@ def create_item(tier, type_=None):
 		affix = get_non_overlapping_affix(affixes, 'legendary')
 		affixes.append(parse_affix(affix))
 
-	
-	
-
 	item = {}
 	item['name'] = "ITEM NAME"
 	item['tier'] = tier
@@ -38,7 +35,7 @@ def create_item(tier, type_=None):
 	item['sockets'] = sockets
 
 	return item
-	
+
 
 def print_item(item):
 

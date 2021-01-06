@@ -1,16 +1,10 @@
 import json
 import random
 
+
 AFFIXES = json.loads(open('data/affixes.json', 'r').read())
 BASE_STATS = json.loads(open('data/base_stats.json', 'r').read())
 TIERS_CONFIG = json.loads(open('data/tiers_config.json', 'r').read())
-#RESTRICTED = json.loads(open('data/restricted.json', 'r').read())
-
-def load_affixes(filename):
-	global AFFIXES
-	with open(filename, 'r') as f:
-		AFFIXES = json.loads(f.read())
-		return AFFIXES
 
 
 def get_affix_by_id(id, group='uncommon'):
@@ -24,19 +18,6 @@ def get_affix_by_id(id, group='uncommon'):
 def get_random_affix(group='uncommon'):
 
 	return random.choice(AFFIXES[group])
-
-
-def get_n_affixes(affixes, amnt, group='uncommon'):
-
-	selected = []
-
-	while len(selected) < amnt:
-		temp = get_random_affix(affixes, group)
-
-		if not any(a['id'] == temp['id'] for a in selected):
-			selected.append(temp)
-
-	return selected
 
 
 def get_non_overlapping_affix(selected=[], group='uncommon'):
