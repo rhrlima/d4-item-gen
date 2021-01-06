@@ -1,0 +1,17 @@
+{
+	"Axe": [],
+	"Mace": [],
+	"Staff": [],
+	"Sword": [],
+	"Wand": [],
+
+	"Shield": [],
+	"Ring": [],
+	"Amulet": [],
+
+	"Helmet": [],
+	"Chest Armor": [],
+	"Bracelet": [],
+	"Pants": [],
+	"Boots": [{"id": 44, "group": "common"}]
+}
