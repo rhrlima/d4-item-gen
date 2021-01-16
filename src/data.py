@@ -3,34 +3,45 @@ import random
 
 
 AFFIXES = json.loads(open('data/affixes.json', 'r').read())
-BASE_STATS = json.loads(open('data/base_stats.json', 'r').read())
-TIERS_CONFIG = json.loads(open('data/tiers_config.json', 'r').read())
+TYPES = json.loads(open('data/types.json', 'r').read())
+TIERS = json.loads(open('data/tiers.json', 'r').read())
+
+SOCKET_ID = 999
 
 
-def get_affix_by_id(id, group='uncommon'):
+def get_affix_by_id(id):
 
-	for a in AFFIXES[group]:
-		if a['id'] == id:
-			return a
-	return {}
-
-
-def get_random_affix(group='uncommon'):
-
-	return random.choice(AFFIXES[group])
+	str_id = str(id)
+	for g in AFFIXES:
+		if str_id in AFFIXES[g]:
+			return AFFIXES[g][str_id]
+	return None
 
 
-def get_non_overlapping_affix(selected=[], group='uncommon'):
+def get_random_affix(groups=['Common']):
 
-	affix = get_random_affix(group)
+	pool = []
+	for g in groups:
+		if g in AFFIXES:
+			pool = list(set(pool) | set(AFFIXES[g]))
 
-	while any(a['id'] == affix['id'] for a in selected):
-		affix = get_random_affix(group)
+	if pool == []:
+		return None
+
+	return get_affix_by_id(id=random.choice(pool))
+
+
+def get_non_overlapping_affix(selected=[], groups=['Common']):
+
+	affix = get_random_affix(groups)
+
+	while any(affix['id'] == a['id'] for a in selected):
+		affix = get_random_affix(groups)
 
 	return affix
 
 
-def parse_affix(affix):
+def parse_affix(affix, scale=0.0):
 
 	parsed_affix = {}
 	parsed_affix['id'] = affix['id']
@@ -42,8 +53,15 @@ def parse_affix(affix):
 		type_ = var['type']
 		values = var['values']
 
-		if type_ == 'rand':
-			value = random.randint(values[0], values[1])
+		if type_ in ['rand', 'frand']:
+			min_ = values[0] + values[0] * scale
+			max_ = values[1] + values[1] * scale
+
+			if type_ == 'rand':
+				value = random.randint(int(min_), int(max_))
+			else:
+				value = round(min_ + random.random() * (max_-min_), 2)
+
 		elif type_ == 'choice':
 			value = random.choice(values)
 		elif type_ == 'value':

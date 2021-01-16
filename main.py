@@ -1,11 +1,10 @@
-from src.items import *
+from tests import test_data, test_generator
+from flask_app import app
 
-#examples
-print_item(create_item(tier='Common'))
-print_item(create_item(tier='Magic'))
-print_item(create_item(tier='Rare'))
-print_item(create_item(tier='Legendary'))
+# running basic tests
+test_data.run_tests()
+test_generator.run_tests()
 
-#generating gear of specific type
-print_item(create_item(tier='Legendary', type_='Sword'))
-print_item(create_item(tier='Legendary', type_='Sword'))
+# running flask server
+# access at localhost:5000
+app.app.run()

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.floating-box {
+  float: left;
+  background-color: lightgrey;
+  width: 250px;
+  border: 10px solid black;
+  padding: 10px;
+  margin: 20px;
+}
+
+</style>
+</head>
+<body>
+
+{% for item in items %}
+<div class="floating-box">
+	{{ item.name }}<br>
+	{{ item.tier }} {{ item.type }}<br>
+	<hr>
+	{% for stat in item.stats %}
+	{{ stat }}<br>
+	{% endfor %}
+	<hr>
+	{% for affix in item.affixes %}
+	{{ affix }}<br>
+	{% endfor %}
+	{% for socket in item.sockets %}
+	{{ socket }}<br>
+	{% endfor %}
+</div>
+{% endfor %}
+
+</body>
+</html>
