@@ -4,7 +4,8 @@
 		"max_affixes": 1,
 		"max_sockets": 2,
 		"s_rates": [0.3, 0.15],
-		"rates": [0.75, 0.5, 0.25]
+		"rates": [0.75, 0.5, 0.25],
+		"v_scale": 0.3
 	},
 
 	"Magic": {
@@ -12,7 +13,8 @@
 		"max_affixes": 3,
 		"max_sockets": 2,
 		"s_rates": [0.3, 0.15],
-		"rates": [1.0, 0.8, 0.5]
+		"rates": [1.0, 0.8, 0.5],
+		"v_scale": 0.2
 	},
 
 	"Rare": {
@@ -20,7 +22,8 @@
 		"max_affixes": 5,
 		"max_sockets": 2,
 		"s_rates": [0.3, 0.15],
-		"rates": [1.0, 1.0, 1.0, 0.5, 0.25]
+		"rates": [1.0, 1.0, 1.0, 0.5, 0.25],
+		"v_scale": 0.1
 	},
 
 	"Legendary": {
@@ -28,6 +31,7 @@
 		"max_affixes": 5,
 		"max_sockets": 2,
 		"s_rates": [0.3, 0.15],
-		"rates": [1.0, 1.0, 1.0, 0.5, 0.25]
+		"rates": [1.0, 1.0, 1.0, 0.5, 0.25],
+		"v_scale": 0.0
 	}
 }

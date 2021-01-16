@@ -1,0 +1,107 @@
+{
+	"Main-hand": {
+
+		"affixes": [
+			{"id": 2, "group": "common"}],
+
+		"options": {
+			"Axe": [
+				{"id": 4, "group": "common"},
+				{"id": 1004, "group": "uncommon"}],
+			"Mace": [
+				{"id": 5, "group": "common"}],
+			"Staff": [
+				{"id": 5, "group": "common"},
+				{"id": 1006, "group": "uncommon"}],
+			"Sword": [
+				{"id": 6, "group": "common"}],
+			"Wand": [
+				{"id": 7, "group": "common"},
+				{"id": 1019, "group": "uncommon"}]
+		}
+	},
+
+	"Off-hand": {
+
+		"affixes": [],
+
+		"options": {
+			"Shield": [
+				{"id": 3, "group": "common"}]
+		}
+	},
+
+	"Head": {
+		
+		"affixes": [
+			{"id": 1, "group": "common"}],
+
+		"options": {
+			"Helmet": []
+		}
+	},
+
+	"neck": {
+		
+		"affixes": [
+			{"id": 0, "group": "common"}],
+
+		"options": {
+			"Amulet": [],
+			"Necklace": []
+		}
+	},
+
+	"accessory": {
+		
+		"affixes": [
+			{"id": 0, "group": "common"}],
+
+		"options": {
+			"Ring": [],
+			"Bracelet": []
+		}
+	},
+
+	"torso": {
+		
+		"affixes": [
+			{"id": 1, "group": "common"}],
+
+		"options": {
+			"Chest Armor": [],
+			"Robe": []
+		}
+	},
+
+	"hands": {
+		
+		"affixes": [
+			{"id": 1, "group": "common"}],
+
+		"options": {
+			"Gloves": []
+		}
+	},
+
+	"legs": {
+		
+		"affixes": [
+			{"id": 1, "group": "common"}],
+
+		"options": {
+			"Pants": []
+		}
+	},
+
+	"Feet": {
+		
+		"affixes": [
+			{"id": 1, "group": "common"}],
+
+		"options": {
+			"Boots": [],
+			"Sandals": []
+		}
+	}
+}

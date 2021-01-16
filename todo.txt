@@ -1,45 +1,41 @@
 [X] read affixes from json
 [X] get random affix
 [X] get random non overlapping affix
-[X] get N random affixes (no duplicates)
-[X] get affix by group
 [X] get affix by ID
 [X] support 1 var
 [X] support N vars
 [X] create specific type of gear
+[X] remove duplicates when populating pool to get random affix
+[X] limit amount and rate of empty sockets according to tier
+[X] innate affixes exclusive to a certain type/subtype
+[X] restrict common affixes to one type of gear
+[X] restrict legendary affixes to one type of gear
 
-[ ] limit amount of empty sockets according to tier
-[ ] limite amount of empty sockets according to gear
+[/] restrict affixes to N types of gear #3
+[/] make commons roll higher values than magics, etc
+	[X] add global scale
+	[ ] add per affix scale
+	[ ] add per type scale
+
+[ ] make values roll different according to type #1
+[ ] add paired values #2
+[ ] make values follow grow according to lv or other metric
 
 [ ] pick name from a pool of options according to type
 [ ] add prefix or suffix according to some affixes
 
-[ ] make values follow grow according to lv or other metric
+[ ] add GUI
 
-[ ] restrict some affixes to certain types of gear ***
-[ ] make commons roll higher values than magics, etc
-[ ] add paired values **
-
+#1 attack on sword rolls higher than attack on staff
+#2 if A rolls X, B will roll Y that is related to X
+#3 works by repeating the affix on affixes.json
 
 * add more affixes
-
+* items have innate affixes and bonus ones
 * common can have 0-3 affixes
 * magic can have 1-3 affixes
 * rares can have 3-5 affixes
-* legendaries can have 3-4 common affixes 1 legendary
+* legendaries can have 3-5 common affixes 1 legendary
 * sockets can repeat as affix
 * magic roll higher than rares
 * rares roll higher than legendaries
-* magic can have more sockets than rares
-* rares can have more sockets than legendaries
-* legendary can have 5th affix as socket besides the legendary power
-
-* wands have critical strike chance
-* axes have chance to inflict bleed
-* staffes have resource regeneration
-
-** if A rolls X, B will roll Y that is related to X
-*** maybe have list of gear specific affixes for each type
-
-obs:
-maybe make sockets an option if regular affixes doesn't roll

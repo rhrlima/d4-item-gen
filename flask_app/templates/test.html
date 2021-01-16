@@ -1,0 +1,14 @@
+<p> {{ item.name }} </p>
+<p> {{ item.tier }} {{ item.type }} </p>
+---
+{% for stat in item.stats %}
+<p> {{ stat }} </p>
+{% endfor %}
+---
+{% for affix in item.affixes %}
+<p> {{ affix }} </p>
+{% endfor %}
+---
+{% for socket in item.sockets %}
+<p> {{ socket }} </p>
+{% endfor %}

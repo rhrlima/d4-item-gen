@@ -1,0 +1,20 @@
+{
+	"Axe": {"affixes": [2, 4, 1004]},
+	"Mace": {"affixes": [2, 5]},
+	"Staff": {"affixes": [2, 5, 1006]},
+	"Sword": {"affixes": [2, 6]},
+	"Wand": {"affixes": [2, 7, 1019]},
+
+	"Shield": {"affixes": [3]},
+
+	"Amulet": {"affixes": [0]},
+	"Ring": {"affixes": [0]},
+
+	"Helm": {"affixes": [1]},
+	"Chest Armor": {"affixes": [1]},
+	"Gloves": {"affixes": [1]},
+	"Pants": {"affixes": [1]},
+	"Boots": {"affixes": [1]},
+
+	"Two-Handed Sword": {"affixes": [2, 7]}
+}

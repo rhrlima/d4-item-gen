@@ -1,55 +1,45 @@
 import json
 import random
 
-AFFIXES = json.loads(open('data/affixes.json', 'r').read())
-BASE_STATS = json.loads(open('data/base_stats.json', 'r').read())
-TIERS_CONFIG = json.loads(open('data/tiers_config.json', 'r').read())
-#RESTRICTED = json.loads(open('data/restricted.json', 'r').read())
+AFFIXES = json.loads(open('data/affixes2.json', 'r').read())
+TYPES = json.loads(open('data/types2.json', 'r').read())
+TIERS = json.loads(open('data/tiers.json', 'r').read())
 
-def load_affixes(filename):
-	global AFFIXES
-	with open(filename, 'r') as f:
-		AFFIXES = json.loads(f.read())
-		return AFFIXES
+SOCKET_ID = 999
 
+def get_affix_by_id(id):
 
-def get_affix_by_id(id, group='uncommon'):
-
-	for a in AFFIXES[group]:
-		if a['id'] == id:
-			return a
-	return {}
+	str_id = str(id)
+	for g in AFFIXES:
+		if str_id in AFFIXES[g]:
+			return AFFIXES[g][str_id]
+	return None
 
 
-def get_random_affix(group='uncommon'):
+def get_random_affix(groups=['Common']):
 
-	return random.choice(AFFIXES[group])
+	pool = []
+	for g in groups:
+		if g in AFFIXES:
+			pool = list(set(pool) | set(AFFIXES[g]))
 
+	if pool == []:
+		return None
 
-def get_n_affixes(affixes, amnt, group='uncommon'):
-
-	selected = []
-
-	while len(selected) < amnt:
-		temp = get_random_affix(affixes, group)
-
-		if not any(a['id'] == temp['id'] for a in selected):
-			selected.append(temp)
-
-	return selected
+	return get_affix_by_id(id=random.choice(pool))
 
 
-def get_non_overlapping_affix(selected=[], group='uncommon'):
+def get_non_overlapping_affix(selected=[], groups=['Common']):
 
-	affix = get_random_affix(group)
+	affix = get_random_affix(groups)
 
-	while any(a['id'] == affix['id'] for a in selected):
-		affix = get_random_affix(group)
+	while any(affix['id'] == a['id'] for a in selected):
+		affix = get_random_affix(groups)
 
 	return affix
 
 
-def parse_affix(affix):
+def parse_affix(affix, scale=0.0):
 
 	parsed_affix = {}
 	parsed_affix['id'] = affix['id']
@@ -61,8 +51,15 @@ def parse_affix(affix):
 		type_ = var['type']
 		values = var['values']
 
-		if type_ == 'rand':
-			value = random.randint(values[0], values[1])
+		if type_ in ['rand', 'frand']:
+			min_ = values[0] + values[0] * scale
+			max_ = values[1] + values[1] * scale
+
+			if type_ == 'rand':
+				value = random.randint(int(min_), int(max_))
+			else:
+				value = round(min_ + random.random() * (max_-min_), 2)
+
 		elif type_ == 'choice':
 			value = random.choice(values)
 		elif type_ == 'value':
