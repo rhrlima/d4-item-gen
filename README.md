@@ -8,15 +8,12 @@ Feel free to contribute and expand the project in any way you want.
 
 
 ## Running
-```
-Flask==1.1.2
-```
 
 Run the script by calling, and then access localhost:5000 on your browser.
 ```
+pip install -r requirements.txt
 python main.py
 ```
-
 
 
 ## Examples

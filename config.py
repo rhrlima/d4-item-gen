@@ -1,0 +1,3 @@
+# public config
+
+DEBUG = False
