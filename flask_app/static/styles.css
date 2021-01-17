@@ -1,0 +1,8 @@
+.floating-box {
+	float: left;
+	background-color: lightgrey;
+	width: 250px;
+	border: 10px solid black;
+	padding: 10px;
+	margin: 20px;
+}

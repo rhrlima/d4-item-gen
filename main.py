@@ -1,6 +1,6 @@
 from tests import test_data, test_generator
 
-from src.items import *
+#from src.items import *
 
 test_data.run_tests()
 test_generator.run_tests()

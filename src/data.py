@@ -1,8 +1,8 @@
 import json
 import random
 
-AFFIXES = json.loads(open('data/affixes2.json', 'r').read())
-TYPES = json.loads(open('data/types2.json', 'r').read())
+AFFIXES = json.loads(open('data/affixes.json', 'r').read())
+TYPES = json.loads(open('data/types.json', 'r').read())
 TIERS = json.loads(open('data/tiers.json', 'r').read())
 
 SOCKET_ID = 999
