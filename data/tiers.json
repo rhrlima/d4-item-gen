@@ -3,8 +3,8 @@
 		"min_affixes": 0,
 		"max_affixes": 1,
 		"max_sockets": 2,
-		"s_rates": [0.3, 0.15],
-		"rates": [0.75, 0.5, 0.25],
+		"s_rates": [0.15, 0.05],
+		"rates": [0.5, 0.25, 0.15],
 		"v_scale": 0.3
 	},
 
@@ -12,7 +12,7 @@
 		"min_affixes": 1,
 		"max_affixes": 3,
 		"max_sockets": 2,
-		"s_rates": [0.3, 0.15],
+		"s_rates": [0.2, 0.2],
 		"rates": [1.0, 0.8, 0.5],
 		"v_scale": 0.2
 	},
