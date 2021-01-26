@@ -3,3 +3,6 @@ __pycache__/
 
 # flask instance folder
 instance/
+
+#local files
+run.ps1

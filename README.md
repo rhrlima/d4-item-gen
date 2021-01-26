@@ -18,4 +18,4 @@ python main.py
 
 ## Examples
 
-![Sample](docs/sample.png)
+![Sample](docs/sample2.png)

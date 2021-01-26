@@ -1,0 +1,4 @@
+{	
+	"offensive": ["Axe", "Mace", "Staff", "Sword", "Wand", "Two-Handed Sword", "Amulet", "Ring"],
+	"defensive": ["Helm", "Chest Armor", "Gloves", "Pants", "Boots"]
+}

@@ -7,20 +7,37 @@
 <body>
 
 {% for item in items %}
-<div class="floating-box">
-	{{ item.name }}<br>
-	{{ item.tier }} {{ item.type }}<br>
-	<hr>
-	{% for stat in item.stats %}
-	{{ stat }}<br>
-	{% endfor %}
-	<hr>
-	{% for affix in item.affixes %}
-	{{ affix }}<br>
-	{% endfor %}
-	{% for socket in item.sockets %}
-	{{ socket }}<br>
-	{% endfor %}
+<div class="frame" tier={{item.tier}}>
+	<h1 class="name_{{item.tier.lower()}}">
+		{{ item.name }}
+	</h1>
+	<h2 class="name_{{item.tier.lower()}}">
+		{{ item.tier }} {{ item.type }}
+	</h2>
+	<hr class="half">
+	<ul>
+		<li class="{{item.dmg_icon}}">{{ item.main_stat }}</li>
+		{% for stat in item.stats %}
+		<li>{{ stat }}</li>
+		{% endfor %}
+	</ul>
+	<hr class="full">
+	<ul>
+		{% for affix in item.affixes %}
+		<li>{{ affix }}</li>
+		{% endfor %}
+		{% for affix in item.legendary %}
+		<li class="legendary">{{ affix }}</li>
+		{% endfor %}
+		{% for socket in item.sockets %}
+		<li class="socket">{{ socket }}</li>
+		{% endfor %}
+	</ul>
+	{% if item.affixes|length > 0 %}
+		<hr class="full">
+	{% endif %}
+	<h3 class="value">{{ item.sell_value }}</h3>
+	<h3 class="durability"> {{ item.durability }}</h3>
 </div>
 {% endfor %}
 

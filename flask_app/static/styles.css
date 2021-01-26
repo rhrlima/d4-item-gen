@@ -1,8 +1,135 @@
-.floating-box {
-	float: left;
-	background-color: lightgrey;
-	width: 250px;
-	border: 10px solid black;
+/* FONTS */
+@font-face {
+	font-family: diabloFont;
+	src: url(fonts/diablo_h.ttf);
+}
+
+@font-face {
+	font-family: weitalic-semi-bold;
+	src: url(fonts/Weitalic-Regular.ttf);
+}
+
+/* BODY */
+body {
+	background: black;
+	font-family: weitalic-semi-bold;
+	color: #cfcfc5;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+/* MAIN FRAME */
+div.frame {
+	display: inline-block;
+	width: 330px;
+	margin: 10px;
 	padding: 10px;
-	margin: 20px;
+	border: 16px solid;
+	border-image: url(images/frame.png) 16 repeat;
+}
+
+.frame[tier="Common"] {
+	background-image: linear-gradient(to bottom, rgb(35,35,35), rgb(9,9,9));
+}
+
+.frame[tier="Magic"] {
+	background-image: linear-gradient(to bottom, rgb(24,33,62), rgb(9,9,9));
+}
+
+.frame[tier="Rare"] {
+	background-image: linear-gradient(to bottom, rgb(152,125,8), rgb(9,9,9));
+}
+
+.frame[tier="Legendary"] {
+	background-image: linear-gradient(to bottom, rgb(104,33,15), rgb(9,9,9));
+}
+
+/* HR LINES */
+hr.half {
+	border: 0;
+	margin: initial;
+	content: url(images/halfline.png);
+}
+
+hr.full {
+	border: 0;
+	margin: auto;
+	content: url(images/fullline.png);
+}
+
+/* ITEM NAME AND TIER */
+h1 {
+	font-family: diabloFont;
+	font-size: 18px;
+	max-width: 205px;
+}
+
+h2 {
+	font-size: 16px;
+}
+
+h3 {
+	font-size: 16px;
+	text-align: right;
+	margin: 0px;
+}
+
+.name_common {
+	color: #e9e9e9;
+}
+
+.name_magic {
+	color: #7c7cf6;
+}
+
+.name_rare {
+	color: #eaed0a;
+}
+
+.name_legendary {
+	color: #f97f00;
+}
+
+
+/* LIST OF AFFIXES */
+ul {
+	list-style-image: url(images/bullet.png);
+	margin-left: -10px;
+	color: #cfcfc5;
+}
+
+li.offensive {
+	list-style-image: url(images/sword.png);
+}
+
+li.defensive {
+	list-style-image: url(images/shield.png);
+}
+
+li.socket {
+	list-style-image: url(images/socket.png);
+	color: #696969;
+}
+
+li.legendary {
+	list-style-image: url(images/star.png);
+	color: #f18606;
+}
+
+/* SELL VALUE AND DURABILITY*/
+.value:before {
+	color: #b69e7a;
+	content: "Sell Value: ";
+}
+
+.value:after {
+	content: url(images/coins.png);;
+}
+
+.durability:before {
+	color: #b69e7a;
+	content: "Durability: "
+}
+
+.durability:after {
+	content: "/100"
 }

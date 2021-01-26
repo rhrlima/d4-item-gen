@@ -5,8 +5,19 @@ import random
 AFFIXES = json.loads(open('data/affixes.json', 'r').read())
 TYPES = json.loads(open('data/types.json', 'r').read())
 TIERS = json.loads(open('data/tiers.json', 'r').read())
+CONFIG = json.loads(open('data/config.json', 'r').read())
 
 SOCKET_ID = 999
+SCALE_MAP = {'Common': 0, 'Magic': 1, 'Rare': 2, 'Legendary': 3, 'Unique': 4}
+
+def _get_scale(affix, tier):
+
+	scale = 0.0 if tier is None else TIERS[tier]['v_scale']
+
+	if 'v_scale' in affix:
+		scale = affix['v_scale'][SCALE_MAP[tier]]
+
+	return scale
 
 
 def get_affix_by_id(id):
@@ -41,7 +52,9 @@ def get_non_overlapping_affix(selected=[], groups=['Common']):
 	return affix
 
 
-def parse_affix(affix, scale=0.0):
+def parse_affix(affix, tier=None):
+
+	scale = _get_scale(affix, tier)
 
 	parsed_affix = {}
 	parsed_affix['id'] = affix['id']

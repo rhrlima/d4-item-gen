@@ -14,21 +14,30 @@
 [/] restrict affixes to N types of gear #3
 [/] make commons roll higher values than magics, etc
 	[X] add global scale
-	[ ] add per affix scale
+	[X] add per affix scale
 	[ ] add per type scale
 
 [ ] make values roll different according to type #1
 [ ] add paired values #2
 [ ] make values follow grow according to lv or other metric
 
-[ ] pick name from a pool of options according to type
-[ ] add prefix or suffix according to some affixes
+[ ] pick name from a pool of options according to type #4
+	[ ] add prefix or suffix according to some affixes
+	[ ] make labeling deterministic
 
-[ ] add GUI
+[/] add GUI
+[x] allow 16 caracters per line in name
+
+[ ] Rework for AFFIXES, make keys as groups and make rolls include N groups
+[ ] Rework for TYPES, better way to hangle atk/def gear
+
 
 #1 attack on sword rolls higher than attack on staff
 #2 if A rolls X, B will roll Y that is related to X
 #3 works by repeating the affix on affixes.json
+#4 common have basic name + some prefix/suffix
+
+** http://www.d2tomb.com/items.shtml
 
 * add more affixes
 * items have innate affixes and bonus ones
